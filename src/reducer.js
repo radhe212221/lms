@@ -19,6 +19,10 @@ function reducer(state = intialState, action) {
         case "t.h": return { ...state, msg: "" }
         case "admin": return { ...state, admin: action.payload }
         case "faculty": return { ...state, faculty: action.payload }
+        case "student": return { ...state, student: action.payload }
+        case "courses": return { ...state, courses: action.payload }
+        case "slots": return { ...state, slots: action.payload }
+        case "batch": return { ...state, batch: action.payload }
         default: return state
     }
 }
