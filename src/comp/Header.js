@@ -6,7 +6,7 @@ export default function Header() {
   const { menu, loggedin, role, user } = state
   return (
     <header>
-      <h1>{role} panel</h1>
+      <h1>{role||"Guest"} panel</h1>
       <div>
         {loggedin && <Link to="/">home</Link>}
         {loggedin && menu?.map(x => <Link key={x.label} to={`/${role}/${x.label}`}>{x.label}</Link>)}
