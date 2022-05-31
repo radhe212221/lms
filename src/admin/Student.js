@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 export default function Student() {
   const a = useSelector(s => s.student)
+  const b = useSelector(s => s.courses)
   const dispatch = useDispatch()
   const [ob1, setob1] = useState({ phone: "", course: "", name: "", email: "", password: "" })
   const [ob2, setob2] = useState({ id: 0, phone: "", course: "", name: "", email: "", password: "" })
@@ -45,12 +46,15 @@ export default function Student() {
   return (
     <div className='wrapper'>
       <h3>student/student</h3>
+      <datalist id="courseslist">
+        {b.map(x => <option key={x.id} value={x.name}>{x.name}/{x.price}/{x.days}</option>)}
+      </datalist>
       <div className='form'>
         <input placeholder='name' name='name' value={ob1.name} onChange={handleChange1} />
         <input placeholder='email' name='email' value={ob1.email} onChange={handleChange1} />
         <input placeholder='password' name='password' value={ob1.password} onChange={handleChange1} />
         <input placeholder='phone' name='phone' value={ob1.phone} onChange={handleChange1} />
-        <input placeholder='course' name='course' value={ob1.course} onChange={handleChange1} />
+        <input list="courseslist" placeholder='course' name='course' value={ob1.course} onChange={handleChange1} />
         <button onClick={insert}>insert</button>
       </div>
 
@@ -60,7 +64,7 @@ export default function Student() {
         <input placeholder='email' name='email' value={ob2.email} onChange={handleChange2} />
         <input placeholder='password' name='password' value={ob2.password} onChange={handleChange2} />
         <input placeholder='phone' name='phone' value={ob2.phone} onChange={handleChange2} />
-        <input placeholder='course' name='course' value={ob2.course} onChange={handleChange2} />
+        <input list="courseslist" placeholder='course' name='course' value={ob2.course} onChange={handleChange2} />
         <button onClick={update}>update</button>
       </div>
       }
