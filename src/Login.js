@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { login, getUserData } from './utils'
-export default function Login() {
+import { toast } from 'react-toastify'
+export default function Login(props) {
   const dispatch = useDispatch()
   const state = useSelector(s => s)
   const [ob, setob] = useState({
-    email: "",
-    password: "",
-    role: ""
+    email: "admin@gmail.com",
+    password: "admin",
+    role: "admin"
   })
 
   const handleChange = e => {
@@ -23,10 +24,11 @@ export default function Login() {
         loggedin: true
       }
       dispatch({ type: "login", payload })
-      alert("loggedin as " + ob.role)
+      toast("loggedin as " + ob.role)
+      props.history.push("/" + ob.role + "/admin")
     }
     else {
-      alert("failed to login as " + ob.role)
+      toast("failed to login as " + ob.role)
     }
   }
   return (

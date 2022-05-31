@@ -100,3 +100,27 @@ footer
 {
     transform: translateX(0%);
 }
+
+
+table{
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+thead{
+    background-color: black;
+    color:white;
+    position: sticky;
+    top:0;
+}
+
+.wrapper
+{
+    padding-inline: 2%;
+}
+
+.overflow
+{
+    height: 60vh;
+    overflow: auto;
+}

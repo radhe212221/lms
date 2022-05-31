@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { SnackbarProvider } from 'notistack';
-
 import './style.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import App from './App';
 
@@ -13,8 +12,6 @@ import reducer from './reducer'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={createStore(reducer)}>
-    <SnackbarProvider maxSnack={3}>
-      <App />
-    </SnackbarProvider>
+    <App />
   </Provider>
 );
