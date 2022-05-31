@@ -22,7 +22,6 @@ export default function App() {
                         </Switch>
                     </div>
                     <Footer />
-                    <Toast />
                 </>
             </BrowserRouter>
         </>
