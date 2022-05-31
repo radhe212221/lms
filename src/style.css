@@ -45,3 +45,31 @@ footer
 {
     min-height: 80vh;
 }
+
+
+.login
+{
+    padding: 2%;
+    margin:2%;
+    background-color: white;
+    display: inline-table;
+    box-shadow: 0 10px 10px black;
+}
+.login input,
+.login button,
+.login select
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.login input{
+    background-color: #f1f1f1;
+}
+.login select{
+    padding: 10px;
+}
+.login button{
+    background-color: black;
+    color:white;
+}

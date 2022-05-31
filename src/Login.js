@@ -18,7 +18,7 @@ export default function Login() {
     console.log(data)
   }
   return (
-    <div>
+    <div className='login'>
       <h1>login</h1>
       <input onChange={handleChange} name='email' value={ob.email} placeholder='username' />
       <input onChange={handleChange} name='password' value={ob.password} placeholder='password' />
