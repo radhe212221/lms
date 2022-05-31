@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { login, getUserData } from './utils'
 export default function Login() {
+  const dispatch = useDispatch()
   const state = useSelector(s => s)
   const [ob, setob] = useState({
     email: "",
@@ -15,7 +16,18 @@ export default function Login() {
   }
   const handlesubmit = () => {
     let data = state[ob.role]
-    console.log(data)
+    if (login(data, ob)) {
+      const payload = {
+        role: ob.role,
+        user: getUserData(data, ob),
+        loggedin: true
+      }
+      dispatch({ type: "login", payload })
+      alert("loggedin as " + ob.role)
+    }
+    else {
+      alert("failed to login as " + ob.role)
+    }
   }
   return (
     <div className='login'>

@@ -1,6 +1,6 @@
 import data from './data'
 const intialState = {
-    menu:data.menu,
+    menu: data.menu,
     admin: data.admin,
     faculty: data.faculty,
     student: data.student,
@@ -14,6 +14,7 @@ const intialState = {
 
 function reducer(state = intialState, action) {
     switch (action.type) {
+        case "login": return { ...state, ...action.payload }
         default: return state
     }
 }
