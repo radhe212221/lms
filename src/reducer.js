@@ -10,11 +10,13 @@ const intialState = {
     user: null,
     loggedin: false,
     role: "",
+    msg: "",
 }
 
 function reducer(state = intialState, action) {
     switch (action.type) {
-        case "login": return { ...state, ...action.payload }
+        case "login": return { ...state, ...action.payload, msg: "loggedin success as :" + action.payload.role }
+        case "t.h": return { ...state, msg: "" }
         default: return state
     }
 }
