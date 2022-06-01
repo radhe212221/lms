@@ -202,3 +202,14 @@ thead{
 }
 
 /* batch ends */
+
+
+/* planner starts */
+.planner
+{
+    display: flex;
+}
+.planner .cal{
+    width: 60vw;
+}
+/* planner ends */
