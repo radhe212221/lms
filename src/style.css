@@ -136,4 +136,25 @@ thead{
 
 
 /* cal starts */
+.cal
+{
+    display: flex;
+    flex-flow: wrap;
+}
+.cal .cal-item
+{
+    background-color: white;
+    opacity: 0.3;
+    margin:1%;
+    padding:1%;
+    width: calc( 86% /  7 );
+    cursor: not-allowed;
+}
+.cal .cal-item.active
+{
+    opacity: 1;
+    background-color: white;
+    cursor: pointer;
+}
+
 /* cal ends */
