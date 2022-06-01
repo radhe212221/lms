@@ -46,6 +46,7 @@ const data = {
         { label: "student", to: "/student" },
         { label: "courses", to: "/courses" },
         { label: "slots", to: "/slots" },
+        { label: "batch", to: "/batch" },
         { label: "chart", to: "/chart" },
         { label: "graph", to: "/graph" },
         { label: "attendance", to: "/attendance" },
