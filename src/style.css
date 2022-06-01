@@ -48,7 +48,8 @@ footer
 
 .container
 {
-    min-height: 80vh;
+    height: 80vh;
+    overflow: auto;
 }
 
 
@@ -124,3 +125,11 @@ thead{
     height: 60vh;
     overflow: auto;
 }
+
+/* chart starts */
+.chart
+{
+    background-color: white;
+    margin:2%;
+}
+/* chart ends */
