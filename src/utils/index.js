@@ -16,9 +16,16 @@ export function chart1(state) {
 }
 export function chart2(state) {
     const courses = state?.courses?.map(x => x.name)
-    const count = state?.courses?.map(x=>x.days)
+    const count = state?.courses?.map(x => x.days)
     return {
         labels: courses,
         count
     }
+}
+
+export function getThisMonthCalendar() {
+    let date = new Date()
+    let n = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
+    let a = Array.from(Array(30)).map((x, i) => i + 1)
+    return a
 }
