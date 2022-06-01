@@ -196,5 +196,9 @@ thead{
     margin-bottom:10px;
     cursor: move;
 }
+.batch .item1 .o-scroll div.active
+{
+    opacity: 1;
+}
 
 /* batch ends */

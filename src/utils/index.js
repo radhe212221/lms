@@ -29,3 +29,21 @@ export function getThisMonthCalendar() {
     let a = Array.from(Array(30)).map((x, i) => i + 1)
     return a
 }
+
+export function checkExistingbatch(a, ob) {
+    let test = a.some(x => x.fid === ob.fid && x.slot_id === ob.slot_id && x.sid === ob.sid && x.cid === ob.cid && x.createdAt === ob.createdAt)
+    return test
+}
+export function ymd(dateParams) {
+    return new Date(dateParams?.createdAt).toJSON().slice(0, 10).split("-").map(x => +x)
+}
+export function hasBatch(day, a) {
+    return a.some(x => ymd(x)[2] === day)
+}
+export function getBatch(day, a) {
+    return hasBatch(day, a) ? (a.filter(x => ymd(x)[2] === day)) : []
+}
+
+export function onlythismonthbatches(a, y, m) {
+    return a.filter(x => ymd(x)[0] === y && ymd(x)[1] === m)
+}
